@@ -39,21 +39,33 @@ public final class App {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-16");
             BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
-            bufferedWriter.write("--------------------");
+            bufferedWriter.write("------------------------");
             bufferedWriter.newLine();
-            //bufferedWriter.write("Nimi: " + username);
-            bufferedWriter.write("Nimi: " + "Mirgus"); //Ajutine
+            if (username != null) {
+                bufferedWriter.write("Nimi: " + username);
+            } else {
+                bufferedWriter.write("Kasutajanimi pole leitud!");
+        }
             bufferedWriter.newLine();
-            //bufferedWriter.write("Käike: " + turns);
-            bufferedWriter.write("Käike: " + "23"); //Ajutine
+            if (turns != null) {
+                bufferedWriter.write("Käike: " + turns);
+            } else {
+                bufferedWriter.write("Miski läks käikude lugemisel valesti!");
+            }
             bufferedWriter.newLine();
-            //bufferedWriter.write("Aeg: " + time);
-            bufferedWriter.write("Aeg: " + "00:02:20"); //Ajutine
+            if (time != null) {
+                bufferedWriter.write("Aeg: " + time);
+            } else {
+                bufferedWriter.write("Miski läks aja lugemisel valesti!");
+            }
             bufferedWriter.newLine();
-            //bufferedWriter.write("Skoor: " + skoor);
-            bufferedWriter.write("Skoor: " + "694201337"); //Ajutine
+            if (skoor != null) {
+                bufferedWriter.write("Skoor: " + skoor);
+            } else {
+                bufferedWriter.write("Miski läks skoori lugemisel valesti!");
+            }
             bufferedWriter.newLine();
-            bufferedWriter.write("---------------------");
+            bufferedWriter.write("------------------------");
             bufferedWriter.newLine();
 
             bufferedWriter.close();
