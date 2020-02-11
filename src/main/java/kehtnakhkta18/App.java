@@ -17,9 +17,13 @@ public final class App {
      */
     public static void main(String[] args) {
 
+    }
+
+        public static void scoreBoard(String gametime) {
+
         String username = null; //Ajutine osa, kuni saaks mingid moodi ühendada teiste osadega
         String skoor = null;
-        String time = null;
+        String time = gametime;
         String turns = null;
 
         try {
@@ -53,7 +57,7 @@ public final class App {
                 bufferedWriter.write("Miski läks käikude lugemisel valesti!");
             }
             bufferedWriter.newLine();
-            if (time != null) {
+            if (time != null ) {
                 bufferedWriter.write("Aeg: " + time);
             } else {
                 bufferedWriter.write("Miski läks aja lugemisel valesti!");
