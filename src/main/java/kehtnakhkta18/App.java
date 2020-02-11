@@ -17,13 +17,9 @@ public final class App {
      */
     public static void main(String[] args) {
 
-    }
-
-        public static void scoreBoard(String gametime) {
-
         String username = null; //Ajutine osa, kuni saaks mingid moodi ühendada teiste osadega
         String skoor = null;
-        String time = gametime;
+        String time = null;
         String turns = null;
 
         try {
@@ -32,10 +28,7 @@ public final class App {
 
             String line;
 
-            while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line); //Et näha mis on score.csv failis, ilma et peaks seda lahti teha
-            }
-            reader.close();
+
 
             // Üleval, BufferedReader, all BufferedWriter
 
@@ -63,7 +56,7 @@ public final class App {
                 bufferedWriter.write("Miski läks aja lugemisel valesti!");
             }
             bufferedWriter.newLine();
-            if (skoor != null) {
+            if (skoor!= null) {
                 bufferedWriter.write("Skoor: " + skoor);
             } else {
                 bufferedWriter.write("Miski läks skoori lugemisel valesti!");
@@ -73,6 +66,10 @@ public final class App {
             bufferedWriter.newLine();
 
             bufferedWriter.close();
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line); //Et näha mis on score.csv failis, ilma et peaks seda lahti teha
+            }
+            reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
